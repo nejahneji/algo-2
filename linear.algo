@@ -1,0 +1,37 @@
+ALGORITHM linear
+VAR
+    arr1 : ARRAY_OF integer[100];
+    arr 2 : ARRAY_OF integer[100];
+    sum,i,j :integer
+    test :BOOLEAN
+    n,m : integer
+BEGIN
+    n =arr1.length
+    m =arr2.length
+    sum =0
+    FOR i FROM 0 TO n STEP 1  DO
+        test := false ;
+        FOR j FROM 0 TO m STEP 1  DO
+           IF (arr1[i]<>arr2[j]) THEN
+               test:= true
+               BREAK ;
+           END_IF
+        END_FOR
+        IF (test:=true) THEN
+            sum=sum+arr1[i]
+        END_IF
+    END_FOR
+    FOR j FROM 0 TO m STEP m  DO
+        test:= false ;
+        FOR i FROM 0 TO n STEP 1  DO
+            IF (arr2[j]<>arr1[i]) THEN
+                test:= true 
+                BREAK
+            END_IF
+        END_FOR
+        IF (test:=true) THEN
+            sum =sum+arr2[j]
+        END_IF
+    END_FOR
+    write ('sum of distinct numbers is' , sum) ;
+END
